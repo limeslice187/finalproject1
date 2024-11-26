@@ -1,0 +1,100 @@
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for mobile and desktop */
+  }
+  
+  body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.95em;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  li {
+    margin-top: 20px;
+  }
+  
+  img {
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+  }
+  
+  .label {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  /* Mobile-first grid layout */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  /* Tablet view (min-width: 772px) */
+  @media (min-width: 772px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    figure {
+      border-radius: 50%; /* Circular images */
+    }
+  
+    /* Last figure spans both columns */
+    .grid figure:last-child {
+      grid-column: span 2;
+    }
+  }
+  
+  /* Large screen view (min-width: 992px) */
+  @media (min-width: 992px) {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  
+    /* Every third figure spans both columns */
+    .grid figure:nth-child(3n) {
+      grid-column: span 2;
+    }
+  
+    figure {
+      border-radius: 0; /* Remove border radius */
+    }
+  }
+  
+  /* Prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto; /* Remove smooth scroll */
+    }
+  }
+  
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+  
+    figure {
+      background-color: #333;
+      border-color: black;
+      color: #fff;
+    }
+  
+    img {
+      border-radius: 8px; /* Optional for dark mode */
+    }
+  }
